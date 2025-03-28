@@ -21,10 +21,18 @@ public class ControlAcheterProduit {
 		Gaulois[] commercant = village.rechercherVendeursProduit(produit);
 		return commercant;
 	}
+	public int acheterProduit(String nomVendeur, int quantiteAcheter) {
+	    Etal etal = controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+
+	    if (etal != null) { 
+	        return etal.acheterProduit(quantiteAcheter);
+	    }
+	    return 0; 
+	}
 	
-	//public void acheterProduit(int quantiteAcheter) {
-	//	Etal.acheterProduit(quantiteAcheter);
-	//}
-	
+	public boolean verifierIdentite(String nomAcheteur) {
+	    return controlVerifierIdentite.verifierIdentite(nomAcheteur);
+	}
+
 	
 }
